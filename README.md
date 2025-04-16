@@ -50,25 +50,59 @@ Les données sont également envoyées via ***<u>MQTT</u>*** pour affichage ou a
 
 ### 📂 Les codes 
  - [`code-final.py`](./code-final.py)  
-  ↪ Version principale du code embarqué. Il intègre la lecture des capteurs, la logique de contrôle des LEDs, la connexion Wifi et l'envoi MQTT.
+  ↪ Version principale du code embarqué. Il intègre la lecture des capteurs, la logique de contrôle des LEDs, la connexion Wifi et l'envoi MQTT.   
+  *A compléter avec vos données de Wifi et du broker.*
 
 - [`code-poco.py`](./code-poco.py)  
-  ↪ Une version antérieure du code final. Pas de gestion des leds.
+  ↪ Une version antérieure du code final. Pas de gestion des leds.   
+    *A compléter avec vos données de Wifi et du broker.*
 
 - [`adresse-mac.py`](./adresse-mac.py)  
   ↪ Script pour récupérer l’adresse MAC de l’ESP32.
 
 - [`wifi.py`](./wifi.py)  
-  ↪ Contient une fonction pour se connecter au wifi. A compléter avec vos identifiants personnels
+  ↪ Contient une fonction pour se connecter au wifi.   
+  *A compléter avec vos identifiants personnels*
 
 - [`mqtt.py`](./mqtt.py)  
-  ↪ Gère la configuration et l’envoi des données vers un broker MQTT. A compléter avec les données de votre broker.
+  ↪ Gère la configuration et l’envoi des données vers un broker MQTT.   
+  *A compléter avec les données de votre broker.*
 
 - [`humidité.py`](./humidité.py)  
   ↪ Script dédié à la lecture du capteur d’humidité du sol.
 
 - [`luminosité.py`](./luminosité.py)  
   ↪ Script dédié à la lecture du capteur de lumière (PB200-286).
+
+
+### POUR EXECUTER :
+
+**<u>Avec THONNY</u>**
+- Ouvrir `Thonny` *(à télécharger [ici](https://thonny.org/))*
+- Dans Thonny, configurer l'interpréteur selon le port sur lequel votre carte est branchée
+- Ouvrir le fichier que vous souhaitez exécuter, puis appuyer sur la flèche verte `executer`
+- Bien appuyer sur Stop (le bouton rouge) pour relancer le code proprement
+
+**<u>AVEC AMPY</u>**
+- Installer ampy
+```
+pip install adafruit-ampy
+```
+- Connaître le port série de ton ESP32
+    - Windows : via le Gestionnaire de périphériques (Ports COM).
+    - Linux/macOS : avec ls /dev/tty.* ou ls /dev/ttyUSB*.
+
+***Pour POCO avec Windows***
+```
+ampy --port 'votre port' put adresse-mac.py
+ampy --port 'votre port' put wifi.py
+ampy --port 'votre port' put mqtt.py
+ampy --port 'votre port' put humidité.py
+ampy --port 'votre port' put luminosité.py
+ampy --port 'votre port' put code-poco.py
+ampy --port 'votre port' put code-final.py
+```
+
 
 ---
 
