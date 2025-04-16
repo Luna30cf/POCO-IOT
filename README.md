@@ -41,10 +41,22 @@ Les données sont également envoyées via ***<u>MQTT</u>*** pour affichage ou a
 | Composant | Rôle |
 |-----------|------|
 | ESP32 | Microcontrôleur Wi-Fi |
-| Capteur d'humidité du sol | Mesure l’humidité 🌱 |
-| Capteur de lumière PB200-286 | Mesure la luminosité ☀️ |
-| LED verte (GPIO27) | Simule l'activation de la pompe 💧 |
-| LEDs rouge/bleue/blanche (GPIO26/25/33) | Simulent la lumière artificielle 💡 |
+| Capteur d'humidité du sol (GPIO34)| Mesure l’humidité 🌱 |
+| Capteur de lumière PB200-286 (GPIO5/GPIO18/GPIO19) | Mesure la luminosité ☀️ |
+| LED bleue (GPIO33) | Simule l'activation de la pompe 💧 |
+| LEDs blanche (GPIO27) | Simulent la lumière artificielle 💡 |
+
+### Schéma de câblage
+
+<p align="center">
+  <img src="schéma.png"/>
+</p>
+
+- Capteur de lumière en bleu foncé
+- Capteur d'humidité en bleu clair
+- Led bleue
+- Led blanche
+- Pompe en rose
 
 ---
 
